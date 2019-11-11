@@ -3,9 +3,62 @@ import * as d3Base from "d3";
 import { legendColor, legendSize } from 'd3-svg-legend';
 import './App.css';
 
+import d3Image from './assets/images/d3.svg'; 
+import raphaelImage from './assets/images/raphael.svg';
+import relayImage from './assets/images/relay.svg';
+import threejsImage from './assets/images/threejs.png';
+import lodashImage from './assets/images/lodash.svg';
+import momentjsImage from './assets/images/momentjs.png';
+import reduxImage from './assets/images/redux.svg';
+import angular2Image from './assets/images/angular2.svg';
+import bootstrapImage from './assets/images/bootstrap.svg';
+import emberImage from './assets/images/ember.png';
+import expressjsImage from './assets/images/expressjs.png';
+import hexoImage from './assets/images/hexo.png';
+import reactImage from './assets/images/react.png';
+import atomImage from './assets/images/atom.png';
+import chromeDevtoolsImage from './assets/images/chrome-devtools.svg';
+import jenkinsImage from './assets/images/jenkins.png';
+import sublimetextImage from './assets/images/sublimetext.png';
+import vscodeImage from './assets/images/vscode.png';
+import yeomanImage from './assets/images/yeoman.png';
+import postcssImage from './assets/images/postcss.svg';
+import keystonejsImage from './assets/images/keystonejs.png';
+import koajsImage from './assets/images/koajs.png';
+import loopbackImage from './assets/images/loopback.svg';
+import restifyImage from './assets/images/restify.png';
+import mongodbImage from './assets/images/mongodb.png';
+import nodejsImage from './assets/images/nodejs.svg';
+import dockerImage from './assets/images/docker.svg';
+import meteorImage from './assets/images/meteor.svg';
+import phonegapImage from './assets/images/phonegap.png';
+import reactioncommerceImage from './assets/images/reactioncommerce.png';
+import reactnativeImage from './assets/images/reactnative.png';
+import squarespaceImage from './assets/images/squarespace.svg';
+import html5Css3Image from './assets/images/html5-css3.png';
+import javascriptImage from './assets/images/javascript.png';
+import cssnextImage from './assets/images/cssnext.png';
+import graphqlImage from './assets/images/graphql.svg';
+import lessImage from './assets/images/less.svg';
+import sassImage from './assets/images/sass.png';
+import typescriptImage from './assets/images/typescript.png';
+import naustudioImage from './assets/images/naustudio.svg';
+import babelImage from './assets/images/babel.png';
+import eslintImage from './assets/images/eslint.svg';
+import gitflowImage from './assets/images/gitflow.png';
+import gulpImage from './assets/images/gulp.png';
+import stylelintImage from './assets/images/stylelint.svg';
+import webpackImage from './assets/images/webpack.svg';
+import angular1Image from './assets/images/angular1.png';
+import backboneImage from './assets/images/backbone.png';
+import gruntImage from './assets/images/grunt.svg';
+import jqueryImage from './assets/images/jquery.png';
+import requirejsImage from './assets/images/requirejs.svg';
+
 const data = [{
   cat: 'library', name: 'D3', value: 30,
-  icon: 'img/d3.svg',
+  image: true,
+  icon: d3Image,
   desc: `
     D3.js (or just D3 for Data-Driven Documents) is a JavaScript library for
     producing dynamic, interactive data visualizations in web browsers.
@@ -14,14 +67,16 @@ const data = [{
   `
 }, {
   cat: 'library', name: 'Raphaël', value: 10,
-  icon: 'img/raphael.svg',
+  image: true,
+  icon: raphaelImage,
   desc: `
     Raphaël is a cross-browser JavaScript library that draws Vector graphics for web sites.
     It will use SVG for most browsers, but will use VML for older versions of Internet Explorer.
   `
 }, {
   cat: 'library', name: 'Relay', value: 70,
-  icon: 'img/relay.svg',
+  image: true,
+  icon: relayImage,
   desc: `
     A JavaScript framework for building data-driven React applications.
     It uses GraphQL as the query language to exchange data between app and server efficiently.
@@ -30,7 +85,8 @@ const data = [{
   `
 }, {
   cat: 'library', name: 'Three.js', value: 40,
-  icon: 'img/threejs.png',
+  image: true,
+  icon: threejsImage,
   desc: `
     Three.js allows the creation of GPU-accelerated 3D animations using
     the JavaScript language as part of a website without relying on
@@ -38,25 +94,29 @@ const data = [{
   `
 }, {
   cat: 'library sub', name: 'Lodash', value: 30,
-  icon: 'img/lodash.svg',
+  image: true,
+  icon: lodashImage,
   desc: `
     Lodash is a JavaScript library which provides <strong>utility functions</strong> for
     common programming tasks using the functional programming paradigm.`
 }, {
   cat: 'library sub', name: 'Moment JS', value: 30,
-  icon: 'img/momentjs.png',
+  image: true,
+  icon: momentjsImage,
   desc: `
     Handy and resourceful JavaScript library to parse, validate, manipulate, and display dates and times.
   `
 }, {
   cat: 'library sub', name: 'Numeral.js', value: 20,
+  image: false,
   icon: 'Numeral.js',
   desc: `
     A javascript library for formatting and manipulating numbers.
   `
 }, {
   cat: 'library sub', name: 'Redux', value: 80,
-  icon: 'img/redux.svg',
+  image: true,
+  icon: reduxImage,
   desc: `
     Redux is an open-source JavaScript library designed for managing
     application state. It is primarily used together with React for building user interfaces.
@@ -64,7 +124,8 @@ const data = [{
   `
 }, {
   cat: 'framework', name: 'Angular 2.0', value: 30,
-  icon: 'img/angular2.svg',
+  image: true,
+  icon: angular2Image,
   desc: `
     Angular (commonly referred to as 'Angular 2+' or 'Angular 2') is a TypeScript-based
     open-source front-end web application platform led by the Angular Team at Google and
@@ -76,7 +137,8 @@ const data = [{
   icon: '',
 },*/ {
   cat: 'framework', name: 'Bootstrap CSS', value: 50,
-  icon: 'img/bootstrap.svg',
+  image: true,
+  icon: bootstrapImage,
   desc: `
     Bootstrap is a free and open-source front-end web framework for designing websites
     and web applications. It contains HTML-and CSS-based design templates for typography,
@@ -84,7 +146,8 @@ const data = [{
   `
 }, {
   cat: 'framework', name: 'Ember JS', value: 10,
-  icon: 'img/ember.png',
+  image: true,
+  icon: emberImage,
   desc: `
     Ember.js is an open-source JavaScript web framework, based on the Model–view–viewmodel
     (MVVM) pattern. It allows developers to create scalable single-page web applications by
@@ -92,7 +155,8 @@ const data = [{
   `
 }, {
   cat: 'framework', name: 'ExpressJS', value: 30,
-  icon: 'img/expressjs.png',
+  image: true,
+  icon: expressjsImage,
   desc: `
     Express.js, or simply Express, is a JavaScript framework designed for building web applications and APIs.
     It is the de facto server framework for Node.js.
@@ -102,13 +166,15 @@ const data = [{
   icon: '',
 },*/{
   cat: 'framework', name: 'Hexo', value: 50,
-  icon: 'img/hexo.png',
+  image: true,
+  icon: hexoImage,
   desc: `
     A fast, simple & powerful blog-aware <strong>static website</strong> generator, powered by Node.js.
   `
 }, {
   cat: 'framework', name: 'ReactJS', value: 100,
-  icon: 'img/react.png',
+  image: true,
+  icon: reactImage,
   desc: `
     React (sometimes written React.js or ReactJS) is an open-source JavaScript framework maintained by Facebook for building user interfaces.
     React processes only user interface in applications and can be used in combination with other JavaScript libraries
@@ -119,7 +185,8 @@ const data = [{
   icon: '',
 },*/ {
   cat: 'tooling', name: 'Atom', value: 10,
-  icon: 'img/atom.png',
+  image: true,
+  icon: atomImage,
   desc: `
     Atom is a free and open-source text and source code editor for macOS, Linux, and Windows with support
     for plug-ins written in Node.js, and embedded Git Control, developed by GitHub.
@@ -127,7 +194,8 @@ const data = [{
   `
 }, {
   cat: 'tooling', name: 'Google Chrome & Devtool', value: 70,
-  icon: 'img/chrome-devtools.svg',
+  image: true,
+  icon: chromeDevtoolsImage,
   desc: `
     <strong>Web development tools (devtool)</strong> allow web developers to test and debug their code.
     At Nau, we use the one come with Google Chrome to debug our apps. It is one the the most powerful
@@ -135,7 +203,8 @@ const data = [{
   `
 }, {
   cat: 'tooling', name: 'Jenkins CI', value: 30,
-  icon: 'img/jenkins.png',
+  image: true,
+  icon: jenkinsImage,
   desc: `
     Jenkins is an open source automation server. Jenkins helps to automate the non-human part of
     the whole software development process, with now common things like continuous integration,
@@ -143,15 +212,17 @@ const data = [{
   `
 }, {
   cat: 'tooling', name: 'Sublime Text 3', value: 100,
-  icon: 'img/sublimetext.png',
+  image: true,
+  icon: sublimetextImage,
   desc: `
     Sublime Text 3 is a powerful and cross-platform source code editor. It is well-known for
     introducing the concept of multi-cursor and lots of text editing command. Besides, its
     plugin ecosystem is very rich which allows enhancing productivity to the fullest.
   `
 }, {
-  cat: 'tooling', name: 'Visual Studio Code', value: 50,
-  icon: 'img/vscode.png',
+  cat: 'tooling', name: 'Visual Studio Code', value: 200,
+  image: true,
+  icon: vscodeImage,
   desc: `
     Visual Studio Code is a cross-platform source code editor developed by Microsoft.
     It includes support for debugging, embedded Git control, syntax highlighting,
@@ -160,6 +231,7 @@ const data = [{
   `
 }, {
   cat: 'tooling', name: 'Performance Tooling', value: 30,
+  image: false,
   icon: 'Performance;Tooling',
   desc: `
     At Nau, web performance is our top priority when development web sites and applications.
@@ -169,7 +241,8 @@ const data = [{
   `
 }, {
   cat: 'tooling', name: 'Yeoman generator for Nau Workflow', value: 20,
-  icon: 'img/yeoman.png',
+  image: true,
+  icon: yeomanImage,
   desc: `
     Yeoman is an open source, command-line interface set of tools mainly used to generate
     structure and scaffolding for new projects, especially in JavaScript and Node.js.
@@ -178,6 +251,7 @@ const data = [{
   `
 }, {
   cat: 'tooling', name: 'live-server', value: 30,
+  image: false,
   icon: 'live-server',
   desc: `
     A Node.js-based developer web server for quickly test apps and web pages with some
@@ -185,55 +259,63 @@ const data = [{
   `
 }, {
   cat: 'tooling', name: 'PostCSS', value: 30,
-  icon: 'img/postcss.svg',
+  image: true,
+  icon: postcssImage,
   desc: `
     PostCSS is a software development tool that uses JavaScript-based plugins to automate routine CSS operations.<br>
     We use PostCSS mainly for auto-vendor-prefixing, but very soon we'll use it for NextCSS compilation.
   `
 }, {
   cat: 'backend', name: 'Elastic Search', value: 10,
+  image: false,
   icon: 'Elastic;Search',
   desc: `
     A specialized database software for high performance search queries.
   `
 }, {
   cat: 'backend', name: 'Keystone CMS', value: 50,
-  icon: 'img/keystonejs.png',
+  image: true,
+  icon: keystonejsImage,
   desc: `
     The de-facto CMS system for website built with Node.js. It can be compared with
     Wordpress of PHP language.
   `
 }, {
   cat: 'backend', name: 'KoaJS', value: 10,
-  icon: 'img/koajs.png',
+  image: true,
+  icon: koajsImage,
   desc: `
     The advanced and improved version of ExpressJS, with leaner middlewares architecture
     thanks to the avent of ES6 generators.
   `
 }, {
   cat: 'backend', name: 'Loopback', value: 30,
-  icon: 'img/loopback.svg',
+  image: true,
+  icon: loopbackImage,
   desc: `
     Powerful API-focused web framework built for Node.js. It feature easy to use configurations
     and auto API documentation page.
   `
 }, {
   cat: 'backend', name: 'Restify', value: 20,
-  icon: 'img/restify.png',
+  image: true,
+  icon: restifyImage,
   desc: `
     High performance API development framework, built for Node.js. It has some convenient wrapper
     to automatically generate admin backoffice site and API documentation page.
   `
 }, {
   cat: 'backend', name: 'MongoDB', value: 70,
-  icon: 'img/mongodb.png',
+  image: true,
+  icon: mongodbImage,
   desc: `
     The de-facto Database solution for JavaScript and Node.js applications. It is a light weight,
     high performance NoSQL database and can be used for small and large websites.
   `
 }, {
   cat: 'backend', name: 'NodeJS', value: 100,
-  icon: 'img/nodejs.svg',
+  image: true,
+  icon: nodejsImage,
   desc: `
     Node.js is a cross-platform JavaScript runtime environment.
     Node.js allows creation of high performance and high concurrency websites with smaller footprint compared to
@@ -242,14 +324,16 @@ const data = [{
   `
 }, {
   cat: 'platform', name: 'Docker Platform', value: 10,
-  icon: 'img/docker.svg',
+  image: true,
+  icon: dockerImage,
   desc: `
     Docker is an open-source project that automates the deployment of applications inside software containers.
     At Nau, we're still learning this technology to later facilitate easy web app deployments.
   `
 }, {
   cat: 'platform', name: 'MeteorJS', value: 80,
-  icon: 'img/meteor.svg',
+  image: true,
+  icon: meteorImage,
   desc: `
     MeteorJS is a free and open-source JavaScript web framework written using Node.js.
     Meteor allows for rapid prototyping and produces cross-platform (Android, iOS, Web) code.
@@ -259,13 +343,15 @@ const data = [{
   `
 }, {
   cat: 'platform', name: 'Phonegap', value: 50,
-  icon: 'img/phonegap.png',
+  image: true,
+  icon: phonegapImage,
   desc: `
     A platform, library and tool for building hybrid mobile app.
   `
 }, {
   cat: 'platform', name: 'Reaction Commerce', value: 20,
-  icon: 'img/reactioncommerce.png',
+  image: true,
+  icon: reactioncommerceImage,
   desc: `
     Reaction Commerce is the first open source, real-time platform to
     combine the flexibility developers and designers want with the stability
@@ -273,7 +359,8 @@ const data = [{
   `
 }, {
   cat: 'platform', name: 'ReactNative', value: 10,
-  icon: 'img/reactnative.png',
+  image: true,
+  icon: reactnativeImage,
   desc: `
     React Native lets you build mobile apps using only JavaScript.
     It uses the same design as React, letting us compose a rich
@@ -281,7 +368,8 @@ const data = [{
   `
 }, {
   cat: 'platform', name: 'SquareSpace', value: 30,
-  icon: 'img/squarespace.svg',
+  image: true,
+  icon: squarespaceImage,
   desc: `
     Squarespace is a SaaS-based content management system-integrated ecommerce-aware website builder and blogging platform.
     At Nau, we have built a website for Squarespace using their low-level API which allowed fully customization
@@ -289,14 +377,16 @@ const data = [{
   `
 }, {
   cat: 'language', name: 'HTML5 & CSS3', value: 100,
-  icon: 'img/html5-css3.png',
+  image: true,
+  icon: html5Css3Image,
   desc: `
     The languages of the Web Front End. At Nau, they are in our blood and with them we can build
     world-class websites with any kind of visual effects or designs requested.
   `
 }, {
   cat: 'language', name: 'JavaScript', value: 100,
-  icon: 'img/javascript.png',
+  image: true,
+  icon: javascriptImage,
   desc: `
     JavaScript is the heart of modern Web front end development and essential element of any Single Page
     Applications. In Nau, we invest a good deal in training developers to have good control of this universal language
@@ -304,14 +394,16 @@ const data = [{
   `
 }, {
   cat: 'language', name: 'CSS Next', value: 10,
-  icon: 'img/cssnext.png',
+  image: true,
+  icon: cssnextImage,
   desc: `
     The CSS language specs of the future but with the help of PostCSS (like Babel for ES6),
     we can use CSS Next today.
   `
 }, {
   cat: 'language', name: 'GraphQL', value: 50,
-  icon: 'img/graphql.svg',
+  image: true,
+  icon: graphqlImage,
   desc: `
     GraphQL is a data query language developed by Facebook publicly released in 2015.
     It provides an alternative to REST and ad-hoc webservice architectures. In combination
@@ -319,21 +411,24 @@ const data = [{
   `
 }, {
   cat: 'language', name: 'LESS CSS', value: 20,
-  icon: 'img/less.svg',
+  image: true,
+  icon: lessImage,
   desc: `
     A preprocessor language to be compiled to CSS. This language is not as popular nowadays and we
     only use them when requested.
   `
 }, {
   cat: 'language', name: 'SASS (SCSS flavor)', value: 70,
-  icon: 'img/sass.png',
+  image: true,
+  icon: sassImage,
   desc: `
     This is our main CSS preprocessor language helping us lay structured foundation to CSS as well
     as assisting on writing more convenient BEM anotations.
   `
 }, {
   cat: 'language', name: 'TypeScript 2', value: 30,
-  icon: 'img/typescript.png',
+  image: true,
+  icon: typescriptImage,
   desc: `
     The strict-typing flavor of ECMAScript, always requires a compiler to compile to vanilla JavaScript
     but the type checking and other syntactical sugar are exceptional. Right now, we only use it for
@@ -341,13 +436,15 @@ const data = [{
   `
 }, {
   cat: 'workflow', name: 'code.naustud.io', value: 100,
-  icon: 'img/naustudio.svg',
+  image: true,
+  icon: naustudioImage,
   desc: `
     A set of guidelines, presets, configs and stadard documentation for Nau developers.
     Please visit the document site at: <a href='http://code.naustud.io' target='_blank'>code.naustud.io</a>
   `
 }, {
   cat: 'workflow', name: 'Mobile First', value: 100,
+  image: false,
   icon: 'Mobile First',
   desc: `
     This is one of our most important principle for web and mobile development.
@@ -355,7 +452,8 @@ const data = [{
   `
 } , {
   cat: 'workflow', name: 'BabelJS', value: 50,
-  icon: 'img/babel.png',
+  image: true,
+  icon: babelImage,
   desc: `
     The de-facto tool to work with ECMAScript 6 and ReactJS nowadays.
   `
@@ -364,6 +462,7 @@ const data = [{
   icon: '',
 },*/ {
   cat: 'workflow', name: 'CSS BEM Notation', value: 70,
+  image: false,
   icon: 'CSS BEM Notation',
   desc: `
     Our naming standard for CSS, which enhance collaboration, documentation and reusability of
@@ -371,6 +470,7 @@ const data = [{
   `
 }, {
   cat: 'workflow', name: 'Front End Code Guide', value: 30,
+  image: false,
   icon: 'Front End;Code Guide',
   desc: `
     Based on an existing best practice document for HTML and CSS. We're adopting it as our standards
@@ -378,26 +478,30 @@ const data = [{
   `
 }, {
   cat: 'workflow', name: 'ESLint', value: 20,
-  icon: 'img/eslint.svg',
+  image: true,
+  icon: eslintImage,
   desc: `
     The tool to check and validate JavaScript code when we develop and prevent potential issues with code.
   `
 }, {
   cat: 'workflow', name: 'Gitflow Workflow', value: 70,
-  icon: 'img/gitflow.png',
+  image: true,
+  icon: gitflowImage,
   desc: `
     Our code version control tool is Git, and Gitflow is one of its workflow standard which
     ensure good collaboration and avoid conflict-resolving efforts. For more info, visit: code.naustud.io
   `
 }, {
   cat: 'workflow', name: 'GulpJS', value: 50,
-  icon: 'img/gulp.png',
+  image: true,
+  icon: gulpImage,
   desc: `
     GulpJS is a task automation tools written for Node.js. It is among the most popular
     Front End and Node project automation tools nowadays
   `
 }, {
   cat: 'workflow', name: 'Nau Code Styles', value: 50,
+  image: false,
   icon: 'Nau Code Styles',
   desc: `
     Based on AirBnB's well-defined JavaScript code styles. Our derivation has some different standards such as
@@ -405,54 +509,63 @@ const data = [{
   `
 }, {
   cat: 'workflow', name: 'Stylelint', value: 50,
-  icon: 'img/stylelint.svg',
+  image: true,
+  icon: stylelintImage,
   desc: `
     Our on-stop tool to validate both CSS and SCSS with a set of conventions and guidelines from our best practice.
   `
 }, {
   cat: 'workflow', name: 'SystemJS', value: 20,
+  image: false,
   icon: 'SystemJS',
   desc: `
     A module loader library that come along Angular 2. Its use is scarce, however.
   `
 }, {
   cat: 'workflow', name: 'Webpack', value: 30,
-  icon: 'img/webpack.svg',
+  image: true,
+  icon: webpackImage,
   desc: `
     A module bundler library that is becoming de-facto tool to use in ReactJS or SPA apps nowadays.
   `
 }, {
   cat: 'legacy', name: 'AngularJS 1', value: 10,
-  icon: 'img/angular1.png',
+  image: true,
+  icon: angular1Image,
   desc: `
     Angular 1. Deprecated
   `
 }, {
   cat: 'legacy', name: 'Backbone', value: 30,
-  icon: 'img/backbone.png',
+  image: true,
+  icon: backboneImage,
   desc: `
     A Model-View library. Deprecated
   `
 }, {
   cat: 'legacy', name: 'Grunt & Automation Stack', value: 30,
-  icon: 'img/grunt.svg',
+  image: true,
+  icon: gruntImage,
   desc: `
     Grunt task automation tool. Deprecated
   `
 }, {
   cat: 'legacy', name: 'jQuery', value: 50,
-  icon: 'img/jquery.png',
+  image: true,
+  icon: jqueryImage,
   desc: `
     Deprecated, because <a href='http://youmightnotneedjquery.com/' target='_blank'>youmightnotneedjquery.com</a>
   `
 }, {
   cat: 'legacy', name: 'RequireJS & AMD', value: 30,
-  icon: 'img/requirejs.svg',
+  image: true,
+  icon: requirejsImage,
   desc: `
     AMD module loader. Deprecated and replaced by ES module and Webpack.
   `
 }, {
   cat: 'legacy tooling', name: 'Browser Sync', value: 40,
+  image: false,
   icon: 'Browser Sync',
   desc: `
     Web development server popular among gulp/grunt web apps. No deprecated and replaced by live-server
@@ -460,6 +573,7 @@ const data = [{
   `
 }, {
   cat: 'legacy tooling', name: 'Git Pre-commit', value: 30,
+  image: false,
   icon: 'Git;Pre-commit',
   desc: `
     Pre-commit hook for git, now deprecated due to slow commit time. Code validation should be done
@@ -467,12 +581,14 @@ const data = [{
   `
 }, {
   cat: 'legacy tooling', name: 'http-server', value: 20,
+  image: false,
   icon: 'http-server',
   desc: `
     A quick test web server based on Node.js, deprecated and replaced by live-server.
   `
 }, {
   cat: 'legacy tooling', name: 'LiveReload', value: 20,
+  image: false,
   icon: 'Live;Reload',
   desc: `
     A propritery auto-reload solution for web developers, now deprecated in favor of live-server and
@@ -537,7 +653,8 @@ function App() {
 				cat: data.cat,
 				name: data.name,
 				value: data.value,
-				icon: data.icon,
+        icon: data.icon,
+        image: data.image,
 				desc: data.desc,
 			}
 		});
@@ -582,8 +699,9 @@ function App() {
 			.append('use')
 			.attr('xlink:href', d => `#${d.id}`);
 
+
 		// display text as circle icon
-		node.filter(d => !String(d.icon).includes('img/'))
+		node.filter(d => !Boolean(d.image))
 			.append('text')
 			.classed('node-icon', true)
 			.attr('clip-path', d => `url(#clip-${d.id})`)
@@ -594,13 +712,12 @@ function App() {
 				.attr('x', 0)
 				.attr('y', (d, i, nodes) => (13 + (i - nodes.length / 2 - 0.5) * 10))
 				.text(name => name);
-
 		// display image as circle icon
-		node.filter(d => String(d.icon).includes('img/'))
+		node.filter(d => Boolean(d.image))
 			.append('image')
 			.classed('node-icon', true)
 			.attr('clip-path', d => `url(#clip-${d.id})`)
-			.attr('xlink:href', d => d.icon)
+			.attr('href', d => d.icon)
 			.attr('x', d => - d.radius * 0.7)
 			.attr('y', d => - d.radius * 0.7)
 			.attr('height', d => d.radius * 2 * 0.7)
